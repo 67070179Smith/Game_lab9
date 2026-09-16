@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
     public AudioClip carcrash;
     public AudioSource bgmaudio;
     public AudioClip bgm;
+    public GameObject fxFire;
+    public GameObject fxSmoke;
+    public GameObject fxExplosive;
     void Awake()
     {
         Instance = this;
@@ -22,6 +25,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("โดนของหล่นใส่! Game Over");
         crashaudio.PlayOneShot(carcrash);
         bgmaudio.Stop();
+        fxFire.SetActive(true);
+        fxSmoke.SetActive(true);
+        fxExplosive.SetActive(true);
         Time.timeScale = 0f;
     }
 }
